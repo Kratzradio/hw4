@@ -18,10 +18,6 @@
 
 using namespace std;
 
-/*
-output file doesn't work that way...look up in slides; especially string input from main function!:q:q
-*/
-
 void reading(double* const p, const int N, const string fname){
 	ifstream in(fname.c_str());
 	for(int i=0; i<N; i++){
@@ -41,10 +37,6 @@ void funky(double* p, const int N){
 	p[N-1] = (a + c + p[N-1])/3;
 }
 
-/*
-output file doesn't work that way...look up in slides; especially string input from main function!
-*/
-
 void output(const double* const p, const int N, const string nfname){	
 	ofstream out(nfname.c_str());
 	for(int i=0; i<N; i++){
@@ -55,9 +47,9 @@ void output(const double* const p, const int N, const string nfname){
 
 int main(){
 const int N=237;
-const string fname = "noisy.txt";	//this doesn't work! read slides
-const string nfname = "filtered.txt";	//s.o.
-double* p = new double[N];		//memory should be allocated inside reading funciton!!!
+const string fname = "noisy.txt";	
+const string nfname = "filtered.txt";	
+double* p = new double[N];		//memory should be allocated inside reading funciton, but I don't see the point.
 
 reading(p, N, fname);
 	for(int i=0; i<10; i++){
